@@ -1,3 +1,16 @@
+Для запуска можно воспользоваться sail (необходим докер): ./vendor/bin/sail up
+Затем подтягиваем миграции: ./vendor/bin/sail artisan migrate
+
+В решении всего 3 ручки:
+<ul>
+    <li>GET /generate/products - создаём через фабрику 60 записей товаров</li>
+    <li>GET /products/all - получаем все товары из базы</li>
+    <li>
+        GET /products?properties[key]=value&properties[key2]=value2 - получаем данные с фильтрацией по произвольным полям<br>
+        Поля можно задать произвольные, я для примера создал3 типа: размер, пол, цвет. Возможноные значения полей можно посмотреть дёрнув ручку /products/all
+    </li>
+</ul>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
